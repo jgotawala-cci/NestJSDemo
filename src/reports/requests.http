@@ -1,0 +1,24 @@
+### Create a report
+POST http://localhost:3000/reports
+Content-Type: application/json
+
+{
+  "maker": "Ford",
+  "model": "Figo",
+  "mileage": 50000,
+  "year": 2001,
+  "price": 70000,
+  "lat": 3,
+  "long": 3
+}
+
+### Approved report
+PATCH http://localhost:3000/reports/4
+Content-Type: application/json
+
+{
+  "approved": true
+}
+
+### Get estimate for an existig vihicle
+GET http://localhost:3000/reports?maker=Ford&model=Figo&mileage=50000&year=2000&lat=2&long=2
