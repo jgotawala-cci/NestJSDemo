@@ -27,13 +27,10 @@ switch (process.env.NODE_ENV) {
     break;
   case 'production':
     dataSourceOption = {
-      type: 'postgres',
-      url: process.env.DATABASE_URL,
+      type: 'sqlite',
+      database: 'test.sqlite',
       migrationsRun: true,
       entities: ['**/*.entity.js'],
-      ssl: {
-        rejectUnauthorized: false,
-      },
       ...commonOptions,
     };
     break;
