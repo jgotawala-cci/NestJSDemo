@@ -8,8 +8,6 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   // app.use(cookieSession({ keys: ['asdfasdf'] }));
-  console.log(process.env);
-
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(process.env.PORT || 9001);
 }
 bootstrap();
