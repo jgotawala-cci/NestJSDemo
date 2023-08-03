@@ -25,17 +25,15 @@ switch (process.env.NODE_ENV) {
       ...commonOptions,
     };
     break;
-  case 'production':
+  default:
     dataSourceOption = {
       type: 'sqlite',
-      database: 'test.sqlite',
+      database: 'prdo.sqlite',
       migrationsRun: true,
       entities: ['**/*.entity.js'],
       ...commonOptions,
     };
     break;
-  default:
-    throw new Error('unknown Environment');
 }
 
 const dbConfig = new DataSource(dataSourceOption);
